@@ -61,7 +61,7 @@
 	}
 }
 
-@mixin paragraph_size_sm {
+@mixin paragraph_size_small {
 	@include Roboto;
 	font-size: 17px;
 	font-weight: 400;

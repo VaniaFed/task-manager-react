@@ -1,6 +1,4 @@
-@import 'src/blocks/paragraph/_size/paragraph_size_big';
-@import 'src/blocks/paragraph/_size/paragraph_size_sm';
-@import 'src/blocks/paragraph/paragraph';
+@import 'components/Paragraph/paragraph.module';
 @import 'utils/variables';
 @import 'utils/media';
 
@@ -67,7 +65,7 @@
 }
 
 .button_small {
-	@include paragraph_size_sm;
+	@include paragraph_size_small;
 	padding: 5px 20px;
 	background-color: $color-white;
 	color: $color-black;

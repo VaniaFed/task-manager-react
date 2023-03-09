@@ -10,7 +10,15 @@ module.exports = {
 		'plugin:prettier/recommended',
 		'plugin:storybook/recommended',
 	],
-	overrides: [],
+	overrides: [
+		{
+			files: ['*.stories.@(ts|tsx|js|jsx|mjs|cjs)'],
+			rules: {
+				'storybook/hierarchy-separator': 'error',
+				'storybook/default-exports': 'off',
+			},
+		},
+	],
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
@@ -19,6 +27,7 @@ module.exports = {
 		'react/react-in-jsx-scope': 0,
 		quotes: ['error', 'single'],
 		indent: ['error', 'tab', { SwitchCase: 1 }],
+		'import/no-webpack-loader-syntax': 0,
 	},
 	plugins: ['react'],
 	settings: {
@@ -43,13 +52,4 @@ module.exports = {
 			},
 		},
 	},
-	overrides: [
-		{
-			files: ['*.stories.@(ts|tsx|js|jsx|mjs|cjs)'],
-			rules: {
-				'storybook/hierarchy-separator': 'error',
-				'storybook/default-exports': 'off',
-			},
-		},
-	],
 };
