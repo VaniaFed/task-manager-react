@@ -1,12 +1,26 @@
+import React, { useState } from 'react';
+
 import { Button } from 'components/Button';
-import React from 'react';
+import { Counter } from 'components/Counter';
+import { Heading } from 'components/Heading';
 
-const logging = () => console.log('Hello, warlord');
+export default function App() {
+	const [counter, setCounter] = useState(0);
 
-export default function App(): any {
+	const countAdd = () => setCounter(counter + 1);
+	const countReduce = () => setCounter(counter - 1);
 	return (
-		<Button onClick={logging} type="small">
-			Hello, button!
-		</Button>
+		<div className="app">
+			<Button onClick={countReduce} type="small">
+				-
+			</Button>
+			<Button onClick={countAdd} type="small">
+				+
+			</Button>
+			<Heading size="3">
+				Value:
+				<Counter value={counter} />
+			</Heading>
+		</div>
 	);
 }
