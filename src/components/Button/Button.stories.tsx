@@ -1,8 +1,8 @@
 import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import { ComponentStory, Meta } from '@storybook/react';
 
 import { Button } from './Button';
-import { props } from './props';
+import { Props } from './props';
 
 export default {
 	title: 'Button',
@@ -11,7 +11,15 @@ export default {
 
 const logging = () => console.log('Hello, warlord');
 
-export const Primary: StoryFn = (args: props) => <Button onClick={logging} {...args} />;
-export const Secondary: StoryFn = (args: props) => <Button onClick={logging} type="secondary" {...args} />;
-export const More: StoryFn = (args: props) => <Button onClick={logging} type="more" {...args} />;
-export const Small: StoryFn = (args: props) => <Button onClick={logging} type="small" {...args} />;
+export const Primary: ComponentStory<typeof Button> = (args: Props) => (
+	<Button onClick={logging} {...args}>
+		hi
+	</Button>
+);
+export const Secondary: ComponentStory<typeof Button> = (args: Props) => (
+	<Button onClick={logging} type="secondary" {...args} />
+);
+export const More: ComponentStory<typeof Button> = (args: Props) => <Button onClick={logging} type="more" {...args} />;
+export const Small: ComponentStory<typeof Button> = (args: Props) => (
+	<Button onClick={logging} type="small" {...args} />
+);

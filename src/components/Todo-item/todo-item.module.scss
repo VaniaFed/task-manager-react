@@ -1,0 +1,50 @@
+@import 'utils/variables';
+@import 'utils/media';
+
+.todo-item {
+	position: relative;
+	display: flex;
+	column-gap: 20px;
+	margin-top: 9px;
+	padding: 12px;
+	border: 1px solid $color-gray-50;
+	border-radius: 14px;
+	cursor: pointer;
+	user-select: none;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:nth-child(2n) {
+		background: $color-gray-40;
+	}
+
+	&:hover .todo-task__remove-btn {
+		display: block;
+	}
+}
+
+.todo-item_completed {
+	background: rgba($color-gray-75, 0.6);
+
+	&:nth-child(2n) {
+		background: rgba($color-gray-75, 0.6);
+	}
+}
+
+.todo-item__remove-btn {
+	position: absolute;
+	z-index: 2;
+	right: 12px;
+	width: 24px;
+	display: none;
+
+	@include media-tablet {
+		display: block;
+	}
+}
+
+.todo-item__checkbox {
+	width: 100%;
+}

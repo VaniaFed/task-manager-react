@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
-import styles from './heading.modules.scss';
-import { props } from './props';
+import styles from './heading.module.scss';
+import { Props } from './props';
 
-export const Heading = ({ size = '1', children = 'Heading text' }: props) => {
+export const Heading = ({ size = '1', children = 'Heading text' }: Props) => {
 	switch (size) {
 		case '1':
 			return <h1 className={styles.h1}>{children}</h1>;

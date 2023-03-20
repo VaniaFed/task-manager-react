@@ -1,6 +1,6 @@
-export type props = {
-	onClick?: () => void;
+export type Props = {
 	type?: 'primary' | 'secondary' | 'more' | 'small';
-	children?: React.ReactNode;
+	children: React.ReactNode;
 	className?: string;
+	onClick?: () => void;
 };

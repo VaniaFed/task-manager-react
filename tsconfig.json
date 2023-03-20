@@ -10,6 +10,7 @@
 		"moduleResolution": "Node",
 		"strictNullChecks": true,
 		"strictFunctionTypes": true,
+		"importsNotUsedAsValues": "preserve",
 		"paths": {
 			"src": ["./src/"],
 			"components": ["./src/components/"],
@@ -27,5 +28,5 @@
 		}
 	},
 	"exclude": ["node_modules", "**/node_modules/*", ".stylelintrc", "*.stories.ts?"],
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "./declaration.d.ts"]
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "./declaration.d.ts", "./custom.d.ts"]
 }

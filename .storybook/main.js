@@ -9,7 +9,7 @@ module.exports = {
 	},
 	webpackFinal: async (config, { configType }) => {
 		config.module.rules.push({
-			test: /\.(tsx?)$/,
+			test: /\.tsx?$/,
 			exclude: /node_modules/,
 			use: ['ts-loader'],
 		});

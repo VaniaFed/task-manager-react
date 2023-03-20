@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './button.module.scss';
-import { props } from './props';
+import { Props } from './props';
 
-export const Button = ({ children = 'Button text', type = 'primary', onClick = () => {} }: props) => {
+export const Button = ({ children = 'Button text', type = 'primary', onClick = () => {} }: Props) => {
 	const cx = classNames.bind(styles);
 	const resultClass = cx('button', `button_${type}`);
 	return (

@@ -1,3 +1,3 @@
-export type props = {
+export type Props = {
 	value?: number;
 };
