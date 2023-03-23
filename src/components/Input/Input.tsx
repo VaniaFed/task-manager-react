@@ -6,18 +6,23 @@ import { Props } from './props';
 
 export const Input = ({ value, placeholder, className, onEnter = () => {}, onBlur = () => {} }: Props) => {
 	const cx = classNames.bind(styles);
-	const resultClass = cx('input');
+	const resultClass = cx('input', className);
 	return (
 		<input
 			type="text"
+			autoFocus
 			defaultValue={value}
 			className={resultClass}
 			placeholder={placeholder}
-			onKeyDown={({ key }) => {
-				if (key === 'Enter') {
-					onEnter();
+			onKeyDown={(e) => {
+				if (e.key === 'Enter') {
+					onEnter(e.currentTarget.value);
+					e.currentTarget.value = '';
 				}
 			}}
-			onBlur={() => onBlur()}></input>
+			onBlur={(e) => {
+				onBlur(e.currentTarget.value);
+				e.currentTarget.value = '';
+			}}></input>
 	);
 };

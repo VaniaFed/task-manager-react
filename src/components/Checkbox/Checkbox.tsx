@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './checkbox.module.scss';
-import { Paragraph } from 'components/Paragraph';
+import { Paragraph } from 'components/paragraph';
 import { Props } from './props';
 
 export const Checkbox = ({ text, checked = false, onChange = () => {} }: Props) => {

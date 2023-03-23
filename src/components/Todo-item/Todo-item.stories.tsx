@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, ComponentStory } from '@storybook/react';
 
-import { TodoItem } from './Todo-item';
+import { TodoItem } from './todo-item';
 import { Props } from './props';
 
 export default {

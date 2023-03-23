@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
 
-import { Link } from './Link';
+import { Link } from './link';
 import { Props } from './props';
 
 export default {

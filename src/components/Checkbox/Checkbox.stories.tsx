@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, ComponentStory } from '@storybook/react';
 
-import { Checkbox } from './Checkbox';
+import { Checkbox } from './checkbox';
 import { Props } from './props';
 
 export default {

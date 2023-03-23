@@ -3,6 +3,6 @@ export type Props = {
 	placeholder?: string;
 	textarea?: boolean;
 	className?: any;
-	onEnter?: () => void;
-	onBlur?: () => void;
+	onEnter?: (value: string) => void;
+	onBlur?: (value: string) => void;
 };

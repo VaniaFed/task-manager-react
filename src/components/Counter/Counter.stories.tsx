@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
 
-import { Counter } from './Counter';
+import { Counter } from './counter';
 import { Props } from './props';
 
 export default {

@@ -1,4 +1,5 @@
 @import 'reset-css';
+@import 'utils/variables';
 
 * {
 	box-sizing: border-box;
@@ -8,6 +9,14 @@ html,
 body {
 	height: 100%;
 	font: normal 20px Roboto, Arial, sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background: $color-blue-50;
+	color: $color-black;
 }
 
 .hidden {

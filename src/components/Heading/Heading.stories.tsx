@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
 
-import { Heading } from './Heading';
+import { Heading } from './heading';
 import { Props } from './props';
 
 export default {
