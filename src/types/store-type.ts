@@ -1,7 +1,7 @@
 import { FilterType } from 'types/filter-type';
 import { TaskType } from 'types/task-type';
 
-export type StoreType = {
+export interface StoreType {
 	tasks: TaskType[];
 	filter: FilterType;
-};
+}

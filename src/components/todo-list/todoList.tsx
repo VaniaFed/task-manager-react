@@ -6,15 +6,17 @@ import styles from './todo-list.module.scss';
 import { Props } from './props';
 import { TodoItem } from 'components/todo-item';
 import { TaskType } from 'types/task-type';
+import { actions } from 'actions/';
 
 export const TodoList = ({ tasks = [] }: Props) => {
 	const dispatch = useDispatch();
 	const removeTask = (id: string) => {
-		dispatch({ type: 'REMOVE_TASK', payload: { id } });
+		dispatch(actions.removeTaskAction(id));
 	};
 
 	const cx = classNames.bind(styles);
 	const resultClass = cx('todo-list');
+
 	return (
 		<div className={resultClass}>
 			{tasks.map((task, key) => (

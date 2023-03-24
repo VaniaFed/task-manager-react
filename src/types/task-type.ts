@@ -1,5 +1,5 @@
-export type TaskType = {
+export interface TaskType {
 	id: string;
 	text: string;
-	status: 'Active' | 'Completed';
-};
+	isCompleted: boolean;
+}

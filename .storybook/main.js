@@ -49,7 +49,7 @@ module.exports = {
 			lib: path.resolve(__dirname, '../src/lib/'),
 			services: path.resolve(__dirname, '../src/services/'),
 			types: path.resolve(__dirname, '../src/types/'),
-			'constants.ts': path.resolve(__dirname, '../src/constants.ts'),
+			constants: path.resolve(__dirname, '../src/constants'),
 			'_vars.scss': path.resolve(__dirname, '../src/_vars.scss'),
 		};
 

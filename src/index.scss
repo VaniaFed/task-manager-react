@@ -11,14 +11,10 @@ body {
 	font: normal 20px Roboto, Arial, sans-serif;
 }
 
-body {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	background: $color-blue-50;
-	color: $color-black;
-}
-
 .hidden {
 	display: none;
+}
+
+.root {
+	height: 100%;
 }

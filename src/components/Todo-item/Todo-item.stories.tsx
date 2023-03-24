@@ -15,7 +15,7 @@ Active.args = {
 	task: {
 		id: 'klfjlsdkfjsd',
 		text: 'Task 1',
-		status: 'Active',
+		isCompleted: false,
 	},
 };
 
@@ -25,6 +25,6 @@ Completed.args = {
 	task: {
 		id: 'ghj',
 		text: 'Task 2',
-		status: 'Completed',
+		isCompleted: true,
 	},
 };

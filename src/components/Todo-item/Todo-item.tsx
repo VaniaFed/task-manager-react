@@ -9,9 +9,9 @@ import { Checkbox } from 'components/checkbox/checkbox';
 export const TodoItem = ({ task, onClick, onRemove }: Props) => {
 	const [isRemoveBtnShown, setIsRemoveBtnShown] = useState(false);
 
-	const { id, text, status } = task;
+	const { id, text, isCompleted } = task;
 	const cx = classNames.bind(styles);
-	const containerClass = cx({ 'todo-item': true, 'todo-item_completed': status === 'Completed' });
+	const containerClass = cx({ 'todo-item': true, 'todo-item_completed': isCompleted });
 
 	return (
 		<div

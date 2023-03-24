@@ -16,22 +16,22 @@ const tasks: TaskType[] = [
 	{
 		id: 'sdklj',
 		text: 'Task 1',
-		status: 'Active',
+		isCompleted: true,
 	},
 	{
 		id: 'klfjlsdkfjsd',
 		text: 'Task 2',
-		status: 'Active',
+		isCompleted: false,
 	},
 	{
 		id: 'ghj',
 		text: 'Task 3',
-		status: 'Active',
+		isCompleted: false,
 	},
 	{
 		id: 'ggg',
 		text: 'Task 4',
-		status: 'Completed',
+		isCompleted: true,
 	},
 ];
 

@@ -1,0 +1,19 @@
+@import 'utils/variables';
+@import 'utils/media';
+@import 'components/paragraph/paragraph.module';
+
+.tab-item {
+	@include paragraph_size_big;
+	height: 28px;
+	padding: 0;
+	color: inherit;
+	background: none;
+	font-family: Roboto, Arial, sans-serif;
+	border: none;
+	cursor: pointer;
+	pointer-events: none;
+
+	@include media-mobile {
+		height: 23px;
+	}
+}
