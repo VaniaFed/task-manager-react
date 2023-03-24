@@ -4,4 +4,5 @@ export type Props = {
 	tasks: TaskType[];
 	filterBy: FilterType;
 	createTask: (inputValue: string) => void;
+	className?: string;
 };

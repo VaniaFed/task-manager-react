@@ -6,15 +6,18 @@ import { Header } from 'components/header';
 import { TodoSmart } from 'containers/todo-smart';
 
 import styles from './app.module.scss';
+import classNames from 'classnames/bind';
 
 export const App = () => {
+	const cx = classNames.bind(styles);
+
 	return (
-		<div className={styles.app}>
-			<Header className={styles.app__header} />
+		<div className={cx('app')}>
+			<Header className={cx('app__header')} />
 			<BoxContainer>
-				<TodoSmart />
+				<TodoSmart className={cx('app__todo')} />
 			</BoxContainer>
-			<Footer className={styles.page__footer} />
+			<Footer className={cx('page__footer')} />
 		</div>
 	);
 };

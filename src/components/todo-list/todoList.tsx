@@ -10,8 +10,12 @@ import { actions } from 'actions/';
 
 export const TodoList = ({ tasks = [] }: Props) => {
 	const dispatch = useDispatch();
-	const removeTask = (id: string) => {
-		dispatch(actions.removeTaskAction(id));
+	const removeTask = (id: TaskType['id']) => {
+		dispatch(actions.removeTask(id));
+	};
+
+	const markTask = (id: TaskType['id']) => {
+		dispatch(actions.markTask(id));
 	};
 
 	const cx = classNames.bind(styles);
@@ -20,7 +24,7 @@ export const TodoList = ({ tasks = [] }: Props) => {
 	return (
 		<div className={resultClass}>
 			{tasks.map((task, key) => (
-				<TodoItem task={task} key={key} onRemove={removeTask} />
+				<TodoItem task={task} key={key} onRemove={removeTask} onClick={markTask} />
 			))}
 		</div>
 	);

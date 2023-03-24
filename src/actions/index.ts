@@ -1,7 +1,9 @@
-import { addTaskAction } from './add-task';
-import { removeTaskAction } from './remove-task';
+import { markTask } from './mark-task';
+import { addTask } from './add-task';
+import { removeTask } from './remove-task';
 
 export const actions = {
-	addTaskAction,
-	removeTaskAction,
+	addTask,
+	removeTask,
+	markTask,
 };

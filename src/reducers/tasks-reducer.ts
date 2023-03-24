@@ -1,9 +1,10 @@
-import { RemoveTaskAction } from 'types/actions/remove-task';
-import { AddTaskAction } from 'types/actions/add-task';
-import { TaskType } from 'types/task-type';
 import { v4 } from 'uuid';
+// @ts-ignore
+import { ADD_TASK, REMOVE_TASK, MARK_TASK } from 'constants.ts';
+import { TaskType } from 'types/task-type';
+import { AddTaskAction, MarkTaskAction, RemoveTaskAction } from 'types/actions';
 
-type Action = AddTaskAction & RemoveTaskAction;
+type Action = AddTaskAction & RemoveTaskAction & MarkTaskAction;
 
 const initialState: TaskType[] = [
 	{
@@ -30,7 +31,7 @@ const initialState: TaskType[] = [
 
 export const tasksReducer: any = (tasks = initialState, action: Action) => {
 	switch (action.type) {
-		case 'ADD_TASK': {
+		case ADD_TASK: {
 			const { text } = action.payload;
 			return [
 				{
@@ -41,9 +42,21 @@ export const tasksReducer: any = (tasks = initialState, action: Action) => {
 				...tasks,
 			];
 		}
-		case 'REMOVE_TASK': {
+		case REMOVE_TASK: {
 			const { id } = action.payload;
 			return tasks.filter((task) => task.id !== id);
+		}
+		case MARK_TASK: {
+			const { id } = action.payload;
+			return tasks.map((task) => {
+				if (task.id === id) {
+					return {
+						...task,
+						isCompleted: !task.isCompleted,
+					};
+				}
+				return task;
+			});
 		}
 
 		default:

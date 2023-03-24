@@ -16,9 +16,13 @@ export const TodoItem = ({ task, onClick, onRemove }: Props) => {
 	return (
 		<div
 			className={containerClass}
+			onClick={(e) => {
+				e.preventDefault();
+				onClick?.(id);
+			}}
 			onMouseEnter={() => setIsRemoveBtnShown(true)}
 			onMouseLeave={() => setIsRemoveBtnShown(false)}>
-			<Checkbox text={text} checked={status === 'Completed'} onChange={onClick} />
+			<Checkbox text={text} checked={isCompleted} />
 			{isRemoveBtnShown && (
 				<img
 					className={styles['todo-item__remove-btn']}
