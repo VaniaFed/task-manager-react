@@ -1,0 +1,16 @@
+@import 'utils/variables';
+@import 'utils/media';
+
+.links {
+	display: flex;
+	column-gap: 25px;
+
+	@include media-tablet {
+		column-gap: 15px;
+	}
+
+	@include media-mobile {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
