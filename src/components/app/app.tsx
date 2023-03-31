@@ -14,7 +14,7 @@ export const App = () => {
 	return (
 		<div className={cx('app')}>
 			<Header className={cx('app__header')} />
-			<BoxContainer>
+			<BoxContainer className={cx('app__container')}>
 				<TodoSmart className={cx('app__todo')} />
 			</BoxContainer>
 			<Footer className={cx('page__footer')} />

@@ -1,23 +1,20 @@
 import React, { ReactNode } from 'react';
-import styles from './heading.module.scss';
-import { Props } from './props';
+import classNames from 'classnames/bind';
 
-export const Heading = ({ size = '1', children = 'Heading text' }: Props) => {
+import { Props } from './props';
+import styles from './heading.module.scss';
+
+const cx = classNames.bind(styles);
+
+export const Heading = ({ size = '1', children = 'Heading text', className }: Props) => {
 	switch (size) {
 		case '1':
-			return <h1 className={styles.h1}>{children}</h1>;
-			break;
+			return <h1 className={cx('h1', className)}>{children}</h1>;
 
 		case '2':
-			return <h2 className={styles.h2}>{children}</h2>;
-			break;
+			return <h2 className={cx('h2', className)}>{children}</h2>;
 
 		case '3':
-			return <h3 className={styles.h3}>{children}</h3>;
-			break;
-
-		default:
-			return <h1 className={styles.h1}>{children}</h1>;
-			break;
+			return <h3 className={cx('h3', className)}>{children}</h3>;
 	}
 };

@@ -6,23 +6,25 @@ import { Props } from './props';
 
 export const Link = ({
 	children,
-	iconType,
 	href = '#',
 	target = '_blank',
+	active = false,
+	iconType,
 	underline = true,
 	size,
-	active = false,
+	color,
 }: Props) => {
 	const cx = classNames.bind(styles);
-	const resultClass = cx(
+	const linkClass = cx(
 		'link',
 		iconType && [`link_${iconType}`],
 		underline && 'link_underline',
 		size && [`link_${size}`],
-		active && [`link_active`]
+		active && [`link_active`],
+		color && [`link_${color}`]
 	);
 	return (
-		<a href={href} target={target} className={resultClass}>
+		<a href={href} target={target} className={linkClass}>
 			{children}
 		</a>
 	);

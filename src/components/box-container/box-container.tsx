@@ -1,5 +1,10 @@
 import React from 'react';
-import styles from './box-container.module.scss';
-import { Props } from './props';
+import classNames from 'classnames/bind';
 
-export const BoxContainer = ({ children }: Props) => <div className={styles['box-container']}>{children}</div>;
+import { Props } from './props';
+import styles from './box-container.module.scss';
+
+export const BoxContainer = ({ children, className }: Props) => {
+	const cx = classNames.bind(styles);
+	return <div className={cx('box-container', className)}>{children}</div>;
+};

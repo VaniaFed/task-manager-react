@@ -103,3 +103,20 @@
 .link_small {
 	@include paragraph_size_small;
 }
+
+.link_white {
+	color: $color-white;
+	fill: $color-white;
+
+	&::after {
+		background: none;
+	}
+
+	&:hover::after {
+		background: $color-white;
+	}
+
+	&:active::after {
+		background: $color-blue-300;
+	}
+}

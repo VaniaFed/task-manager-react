@@ -4,3 +4,20 @@
 .footer {
 	background: $color-blue-200;
 }
+
+.footer__socials {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	padding: 24px 4px;
+}
+
+.footer__links {
+	display: flex;
+	column-gap: 61px;
+}
+
+.footer__paragraph {
+	color: $color-white;
+}

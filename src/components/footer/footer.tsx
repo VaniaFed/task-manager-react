@@ -1,36 +1,43 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import styles from './footer.module.scss';
-import { Props } from './props';
 import { Paragraph } from 'components/paragraph';
 import { BoxContainer } from 'components/box-container';
+import { TypeLink } from 'components/links/props';
+import { Links } from 'components/links';
+
+import { Props } from './props';
+import styles from './footer.module.scss';
 
 export const Footer = ({ className }: Props) => {
 	const cx = classNames.bind(styles);
-	const resultClass = cx('footer', className);
+
+	const links: TypeLink[] = [
+		{
+			text: 'instagram',
+			href: '#',
+			isIcon: true,
+			iconType: 'inst',
+		},
+		{
+			text: 'facebook',
+			href: '#',
+			isIcon: true,
+			iconType: 'fb',
+		},
+		{
+			text: 'vkontakte',
+			href: '#',
+			isIcon: true,
+			iconType: 'vk',
+		},
+	];
 	return (
-		<footer className={resultClass}>
+		<footer className={cx('footer', className)}>
 			<BoxContainer>
-				<div className="footer__socials container container_size_1168">
+				<div className={cx('footer__socials')}>
 					<Paragraph className={cx('footer__paragraph')}>Наши социальные сети</Paragraph>
-					<ul className="footer__links">
-						<li>
-							<a href="#" className="footer__link link link_inst" target="_blank">
-								instagram
-							</a>
-						</li>
-						<li>
-							<a href="#" className="footer__link link link_fb" target="_blank">
-								facebook
-							</a>
-						</li>
-						<li>
-							<a href="#" className="footer__link link link_vk" target="_blank">
-								vkontakte
-							</a>
-						</li>
-					</ul>
+					<Links links={links} className={cx('footer__links')} color="white" />
 				</div>
 			</BoxContainer>
 		</footer>

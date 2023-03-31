@@ -8,6 +8,7 @@ import { Props } from './props';
 import { Tab } from 'components/tab';
 import { TabType } from 'types/tab-type';
 
+const cx = classNames.bind(styles);
 // мб вынести в стор
 // как сделать активным один из?
 const tabItems: TabType[] = [
@@ -27,12 +28,13 @@ const tabItems: TabType[] = [
 ];
 
 export const Todo = ({ tasks, filterBy, createTask, className }: Props) => {
-	const cx = classNames.bind(styles);
-	const resultClass = cx('todo', className);
-
 	return (
-		<div className={resultClass}>
-			<Input placeholder="Введите задачу" onEnter={createTask} onBlur={createTask}></Input>
+		<div className={cx('todo', className)}>
+			<Input
+				placeholder="Введите задачу"
+				onEnter={createTask}
+				onBlur={createTask}
+				className={cx('todo__input')}></Input>
 			<TodoContent tasks={tasks} filterBy={filterBy} counter={tasks.length} />
 			<Tab active={filterBy} items={tabItems} />
 		</div>

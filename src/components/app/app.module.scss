@@ -9,14 +9,18 @@
 	color: $color-black;
 }
 
-.app__todo {
-	margin-top: 60px;
-}
-
 .app__header {
 	display: flex;
 	flex-shrink: 0;
 	height: 88px;
+}
+
+.app__container {
+	flex: 1 0 auto;
+}
+
+.app__todo {
+	margin-top: 60px;
 }
 
 .page__footer {
