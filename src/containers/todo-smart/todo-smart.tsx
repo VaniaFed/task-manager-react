@@ -18,7 +18,7 @@ export const TodoSmart = ({ className }: Props) => {
 	};
 
 	useEffect(() => {
-		fetchTasks();
+		// fetchTasks();
 	}, []);
 
 	const allTasks = useSelector(selectors.tasks);

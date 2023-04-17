@@ -18,7 +18,9 @@ export const TodoContent = ({ tasks, filter, counter }: Props) => {
 				{filter}
 				<Counter value={counter} className={cx('heading__counter')} />
 			</Heading>
-			<TodoContentBox>{tasks.length > 0 ? <TodoList tasks={tasks} /> : <EmptyState />}</TodoContentBox>
+			<TodoContentBox>
+				{tasks.length > 0 ? <TodoList tasks={tasks} /> : <EmptyState filter={filter} />}
+			</TodoContentBox>
 		</div>
 	);
 };
