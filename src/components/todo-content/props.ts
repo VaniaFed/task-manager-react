@@ -1,7 +1,7 @@
 import { TaskType } from 'types/task-type';
 
 export type Props = {
-	filterBy: string;
+	filter: string;
 	counter: number;
 	tasks: TaskType[];
 };

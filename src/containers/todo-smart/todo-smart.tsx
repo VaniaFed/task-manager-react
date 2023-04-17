@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { tasksSelector } from 'selectors/tasks-selector';
-import { filterSelector } from 'selectors/filter-selector';
+import { selectors } from 'selectors/';
 import { actions } from 'actions/';
-
 import { Todo } from 'components/todo';
 import { Props } from './props';
-import { services } from 'services/';
 
 export const TodoSmart = ({ className }: Props) => {
 	const dispatch = useDispatch();
@@ -24,8 +21,26 @@ export const TodoSmart = ({ className }: Props) => {
 		fetchTasks();
 	}, []);
 
-	const tasks = useSelector(tasksSelector);
-	const filterBy = useSelector(filterSelector);
+	const allTasks = useSelector(selectors.tasks);
+	const completedTasks = useSelector(selectors.completedTasks);
+	const activeTasks = useSelector(selectors.activeTasks);
+	const filter = useSelector(selectors.filter);
 
-	return <Todo tasks={tasks} filterBy={filterBy} createTask={createTask} className={className} />;
+	const getFilteredTasks = () => {
+		switch (filter) {
+			case 'All':
+				return allTasks;
+
+			case 'Active':
+				return activeTasks;
+
+			case 'Completed':
+				return completedTasks;
+
+			default:
+				return allTasks;
+		}
+	};
+
+	return <Todo tasks={getFilteredTasks()} filter={filter} createTask={createTask} className={className} />;
 };

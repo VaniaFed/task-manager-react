@@ -8,9 +8,8 @@ import { TodoSmart } from 'containers/todo-smart';
 import styles from './app.module.scss';
 import classNames from 'classnames/bind';
 
+const cx = classNames.bind(styles);
 export const App = () => {
-	const cx = classNames.bind(styles);
-
 	return (
 		<div className={cx('app')}>
 			<Header className={cx('app__header')} />

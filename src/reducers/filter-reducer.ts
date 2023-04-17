@@ -1,14 +1,19 @@
-import { FilterType } from './../types/filter-type';
+import { FilterType } from 'types/filter-type';
+import { SetFilterAction } from 'types/actions/set-filter';
+// @ts-ignore
+import { SET_FILTER } from 'constants.ts';
 
 const initialState: FilterType = 'All';
 
-export const filterReducer: any = (filter = initialState, action: any) => {
+type Action = SetFilterAction;
+
+export const filterReducer: any = (filter = initialState, action: Action) => {
 	switch (action.type) {
-		case 'SET_FILTER': {
+		case SET_FILTER: {
 			const { filter } = action.payload;
 			return filter;
-			break;
 		}
+
 		default:
 			return filter;
 			break;

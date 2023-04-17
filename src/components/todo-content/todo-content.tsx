@@ -11,11 +11,11 @@ import styles from './todo-content.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const TodoContent = ({ tasks, filterBy, counter }: Props) => {
+export const TodoContent = ({ tasks, filter, counter }: Props) => {
 	return (
 		<div className={cx('todo-content')}>
 			<Heading size="3" className={cx('todo-content__heading')}>
-				{filterBy}
+				{filter}
 				<Counter value={counter} className={cx('heading__counter')} />
 			</Heading>
 			<TodoContentBox>{tasks.length > 0 ? <TodoList tasks={tasks} /> : <EmptyState />}</TodoContentBox>

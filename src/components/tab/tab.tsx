@@ -1,23 +1,27 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import styles from './tab.module.scss';
 import { Props } from './props';
 import { TabItem } from 'components/tab-item';
+import styles from './tab.module.scss';
 
-// наверное нужно стейт делать
-export const Tab = ({ items, className, active }: Props) => {
-	const cx = classNames.bind(styles);
-	const resultClass = cx('tab', className);
+const cx = classNames.bind(styles);
 
+export const Tab = ({ items, filter, setFilter, className }: Props) => {
 	return (
-		<ul className={resultClass}>
+		<ul className={cx('tab', className)}>
 			{items.map((tabItem, i) => (
-				<li key={i} className={cx('tab__item', tabItem.isActive && 'tab__item_active')}>
+				<li
+					key={i}
+					className={cx(
+						'tab__item',
+						tabItem.text.toLowerCase() === filter.toLowerCase() && 'tab__item_active'
+					)}>
 					<TabItem
 						text={tabItem.text}
 						counter={tabItem.counter}
-						counterClassName={tabItem.isActive && cx('tab__counter_active')}
+						counterClassName={tabItem.text === filter && cx('tab__counter_active')}
+						onClick={setFilter}
 					/>
 				</li>
 			))}

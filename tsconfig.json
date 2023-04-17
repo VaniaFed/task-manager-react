@@ -10,7 +10,6 @@
 		"moduleResolution": "Node",
 		"strictNullChecks": true,
 		"strictFunctionTypes": true,
-		"importsNotUsedAsValues": "preserve",
 		"paths": {
 			"src": ["./src/"],
 			"components": ["./src/components/"],

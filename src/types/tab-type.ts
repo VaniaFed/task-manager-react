@@ -1,5 +1,6 @@
+import { FilterType } from './filter-type';
+
 export interface TabType {
-	text: string;
+	text: FilterType;
 	counter?: number;
-	isActive?: boolean;
 }
