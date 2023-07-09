@@ -3,6 +3,8 @@
 
 .todo-item {
 	position: relative;
+	display: flex;
+	align-items: center;
 	padding: 12px;
 	border: 1px solid $color-gray-50;
 	border-radius: 14px;
@@ -45,4 +47,9 @@
 
 .todo-item__checkbox {
 	width: 100%;
+}
+
+.todo-item__tag {
+	position: absolute;
+	right: 48px;
 }

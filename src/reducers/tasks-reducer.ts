@@ -3,26 +3,31 @@ import {
 	ADD_TASK,
 	REMOVE_TASK,
 	MARK_TASK,
+	REMOVE_COMPLETED_TASKS,
 	FETCH_TASKS_SUCCESS,
 	FETCH_TASKS_ERROR,
 	// @ts-ignore
 } from 'constants.ts';
 
 import { TaskType } from 'types/task-type';
-import { AddTaskAction, MarkTaskAction, RemoveTaskAction, FetchTasksSuccess, FetchTasksError } from 'types/actions';
+import {
+	AddTaskAction,
+	MarkTaskAction,
+	RemoveTaskAction,
+	FetchTasksSuccess,
+	FetchTasksError,
+	RemoveCompletedTasksAction,
+} from 'types/actions';
 
-type Action = AddTaskAction & RemoveTaskAction & MarkTaskAction & FetchTasksSuccess & FetchTasksError;
+type Action = AddTaskAction &
+	RemoveTaskAction &
+	RemoveCompletedTasksAction &
+	MarkTaskAction &
+	FetchTasksSuccess &
+	FetchTasksError;
 
 export const tasksReducer: any = (tasks = [] as TaskType[], action: Action) => {
 	switch (action.type) {
-		case FETCH_TASKS_SUCCESS: {
-			return action.payload.tasks;
-		}
-
-		case FETCH_TASKS_ERROR: {
-			console.log(action.payload.message);
-		}
-
 		case ADD_TASK: {
 			const { text } = action.payload;
 			return [
@@ -51,6 +56,18 @@ export const tasksReducer: any = (tasks = [] as TaskType[], action: Action) => {
 				}
 				return task;
 			});
+		}
+
+		case REMOVE_COMPLETED_TASKS: {
+			return tasks.filter((task) => !task.isCompleted);
+		}
+
+		case FETCH_TASKS_SUCCESS: {
+			return action.payload.tasks;
+		}
+
+		case FETCH_TASKS_ERROR: {
+			console.log(action.payload.message);
 		}
 
 		default:

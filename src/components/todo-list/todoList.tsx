@@ -23,8 +23,8 @@ export const TodoList = ({ tasks = [] }: Props) => {
 
 	return (
 		<div className={resultClass}>
-			{tasks.map((task, key) => (
-				<TodoItem task={task} key={key} onRemove={removeTask} onClick={markTask} />
+			{tasks.map((task) => (
+				<TodoItem task={task} key={task.id} onRemove={removeTask} onClick={markTask} />
 			))}
 		</div>
 	);
