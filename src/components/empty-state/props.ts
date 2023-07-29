@@ -1,6 +1,6 @@
-import { FilterType } from 'types/';
+import type { FilterType } from 'types';
 
-export type Props = {
+export interface Props {
 	filter: FilterType;
 	className?: string;
-};
+}

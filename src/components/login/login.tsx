@@ -1,20 +1,22 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import { Link } from 'components/link';
+import { Link } from 'components/ui/link';
 
-import { Props } from './props';
 import styles from './login.module.scss';
 
-export const Login = ({ className }: Props) => {
+import type { FC } from 'react';
+import type { Props } from './props';
+
+export const Login: FC<Props> = ({ className }) => {
 	const cx = classNames.bind(styles);
 	return (
 		<span className={cx('login', className)}>
-			<Link href="#" className={cx('header__link')} size="small">
+			<Link href="#" className={cx('header__link')} level="p-small">
 				Войти
 			</Link>
 			/
-			<Link href="#" className={cx('header__link')} size="small">
+			<Link href="#" className={cx('header__link')} level="p-small">
 				Зарегистрироваться
 			</Link>
 		</span>

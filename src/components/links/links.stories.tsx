@@ -1,13 +1,16 @@
 import React from 'react';
-import { ComponentStory, Meta } from '@storybook/react';
 
 import { Links } from './links';
-import { Props, TypeLink } from './props';
 
-export default {
+import type { Props, TypeLink } from './props';
+import type { ComponentStory, Meta } from '@storybook/react';
+
+const meta: Meta = {
 	title: 'Links',
 	component: Links,
-} as Meta;
+};
+
+export default meta;
 
 const links: TypeLink[] = [
 	{
