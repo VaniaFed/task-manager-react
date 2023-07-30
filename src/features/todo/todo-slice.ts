@@ -46,7 +46,6 @@ export const todoSlice = createSlice({
 
 export const { addTask, markTask, removeTask, removeCompleted, changeFilter } = todoSlice.actions;
 
-// TODO: дичь с state: todo: initial state
 export const selectTasks = (state: RootState): TaskType[] => state.todo.tasks;
 
 export const selectActiveTasks = (state: RootState): TaskType[] => state.todo.tasks.filter((task) => !task.isCompleted);

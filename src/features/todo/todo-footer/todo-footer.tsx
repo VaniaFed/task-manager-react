@@ -1,11 +1,11 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import classNames from 'classnames/bind';
 
 import { Tabs } from 'components/ui/tabs';
 import { Button } from 'components/ui/button';
 
-import { selectTasks, selectActiveTasks, selectCompletedTasks, removeCompleted, changeFilter } from '../todo-slice';
+import { removeCompleted, changeFilter } from '../todo-slice';
 
 import styles from './todo-footer.module.scss';
 
@@ -15,10 +15,7 @@ import type { FilterType, TabType } from 'types';
 
 const cx = classNames.bind(styles);
 
-export const TodoFooter: FC<Props> = ({ filter }) => {
-	const allTasks = useSelector(selectTasks);
-	const activeTasks = useSelector(selectActiveTasks);
-	const completedTasks = useSelector(selectCompletedTasks);
+export const TodoFooter: FC<Props> = ({ allTasks, activeTasks, completedTasks, filter }) => {
 	const tabItems: TabType[] = [
 		{ text: 'All', counter: allTasks.length },
 		{ text: 'Active', counter: activeTasks.length },
@@ -37,7 +34,7 @@ export const TodoFooter: FC<Props> = ({ filter }) => {
 	return (
 		<div className={cx('todo__footer')}>
 			<Tabs tabs={tabItems} value={filter} onChange={handleChangeFilter} />
-			{allTasks.length > 0 && (
+			{completedTasks.length > 0 && (
 				<Button variant="small" onClick={handleRemoveCompleted}>
 					Remove completed
 				</Button>
