@@ -21,10 +21,10 @@ export const TodoList: FC<Props> = ({ tasks = [] }) => {
 				<TodoItem
 					task={task}
 					key={task.id}
-					onRemove={(id) => {
+					onRemove={(id: string) => {
 						dispatch(removeTask(id));
 					}}
-					onClick={(id) => {
+					onClick={(id: string) => {
 						dispatch(markTask(id));
 					}}
 				/>

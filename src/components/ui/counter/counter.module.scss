@@ -1,9 +1,6 @@
-@import 'components/ui/Paragraph/paragraph.module';
 @import 'utils/variables';
 @import 'utils/media';
 
 .counter {
-	@include paragraph;
-	@include paragraph_size_small;
 	color: $color-gray-300;
 }
