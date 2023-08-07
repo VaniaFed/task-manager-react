@@ -1,0 +1,23 @@
+@import 'utils/media';
+
+.todo-footer {
+	padding: 0 30px;
+	display: flex;
+	justify-content: space-between;
+
+	@include media-tablet {
+		flex-direction: column;
+		gap: 18px;
+	}
+
+	@include media-mobile {
+		justify-content: center;
+		padding: 0;
+	}
+
+	&__button {
+		@include media-tablet {
+			padding: 12px 20px;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+@import 'utils/variables';
+@import 'utils/media';
+
+.links-layout {
+	display: flex;
+
+	@include media-mobile {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&_gap_25 {
+		column-gap: 25px;
+
+		@include media-tablet {
+			column-gap: 15px;
+		}
+	}
+
+	&_gap_35 {
+		column-gap: 35px;
+	}
+
+	&_gap_50 {
+		column-gap: 50px;
+
+		@include media-laptop {
+			column-gap: 30px;
+		}
+	}
+}
