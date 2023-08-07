@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import { NavHashLink } from 'react-router-hash-link';
 
 import styles from './link.module.scss';
 
@@ -39,9 +39,9 @@ export const Link = forwardRef<HTMLAnchorElement, Props>(
 						{children}
 					</a>
 				) : (
-					<NavHashLink className={linkClass} to={href} smooth={smooth} ref={ref}>
+					<RouterLink className={linkClass} to={href} ref={ref}>
 						{children}
-					</NavHashLink>
+					</RouterLink>
 				)}
 			</>
 		);

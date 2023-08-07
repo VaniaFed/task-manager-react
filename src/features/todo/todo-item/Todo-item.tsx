@@ -11,6 +11,7 @@ import type { FC } from 'react';
 import type { Props } from './props';
 
 const cx = classNames.bind(styles);
+
 export const TodoItem: FC<Props> = ({ task, onClick = () => {}, onRemove = () => {} }) => {
 	const [isRemoveBtnShown, setIsRemoveBtnShown] = useState(false);
 

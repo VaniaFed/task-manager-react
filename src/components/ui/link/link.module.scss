@@ -68,7 +68,7 @@
 	fill: $color-white;
 
 	&:active {
-		color: $color-orange-200;
+		color: $color-blue-200;
 	}
 
 	&::after {
@@ -80,7 +80,7 @@
 	}
 
 	&:active::after {
-		background: $color-orange-200;
+		background: $color-blue-200;
 	}
 }
 

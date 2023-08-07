@@ -32,10 +32,10 @@ export const TodoFooter: FC<Props> = ({ allTasks, activeTasks, completedTasks, f
 	};
 
 	return (
-		<div className={cx('todo__footer')}>
+		<div className={cx('todo-footer')}>
 			<Tabs tabs={tabItems} value={filter} onChange={handleChangeFilter} />
 			{completedTasks.length > 0 && (
-				<Button variant="small" onClick={handleRemoveCompleted}>
+				<Button variant="small" onClick={handleRemoveCompleted} className={cx('todo-footer__button')}>
 					Remove completed
 				</Button>
 			)}

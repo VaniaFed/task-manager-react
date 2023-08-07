@@ -42,7 +42,7 @@ export const Footer: FC<Props> = ({ className }) => {
 					<LinksLayout className={cx('footer__links')} gap="25">
 						{links.map((link, key) => (
 							<li key={key}>
-								<Link href={link.href} isExternal iconType={link.iconType}>
+								<Link href={link.href} isExternal iconType={link.iconType} color="white">
 									{link.text}
 								</Link>
 							</li>

@@ -10,6 +10,7 @@
 		"moduleResolution": "Node",
 		"strictNullChecks": true,
 		"strictFunctionTypes": true,
+		"skipLibCheck": true,
 		"paths": {
 			"components": ["./src/components/"],
 			"ui": ["./src/components/ui/"],

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TodoList } from './todoList';
+import { TodoList } from './todo-list';
 
 import type { Props } from './props';
 import type { ComponentStory, Meta } from '@storybook/react';

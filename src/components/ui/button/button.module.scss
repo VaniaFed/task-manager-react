@@ -72,12 +72,12 @@
 	border-radius: 10px;
 
 	&:hover {
-		background: $color-orange-200;
+		background: $color-blue-300;
 		color: $color-white;
 	}
 
 	&:active {
-		background: $color-orange-100;
-		color: $color-black;
+		background: $color-blue-200;
+		color: $color-white;
 	}
 }
