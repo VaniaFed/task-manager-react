@@ -2,8 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import classNames from 'classnames/bind';
 
-import { TodoItem } from 'features/todo/todo-item';
-
+import { TodoItem } from '../todo-item';
 import { markTask, removeTask } from '../todo-slice';
 
 import styles from './todo-list.module.scss';
