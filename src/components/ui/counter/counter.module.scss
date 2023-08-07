@@ -2,5 +2,6 @@
 @import 'utils/media';
 
 .counter {
+	display: inline-block;
 	color: $color-gray-300;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TodoItem } from 'features/todo/todo-item';
+import { TodoItem } from './todo-item';
 
 import type { Meta, ComponentStory } from '@storybook/react';
 import type { Props } from './props';
