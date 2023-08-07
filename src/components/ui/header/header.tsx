@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import { Login } from 'components/login';
+import { Login } from 'components/ui/login';
 import { Logo } from 'components/ui/logo';
 import { Link } from 'components/ui/link';
 import { BoxContainer } from 'components/layouts/box-container';

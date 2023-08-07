@@ -13,7 +13,7 @@ import type { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const Todo: FC<Props> = ({ className }) => {
+export const Todo: FC<Props> = ({ className }: Props) => {
 	const {
 		allTasks,
 		activeTasks,
@@ -26,6 +26,7 @@ export const Todo: FC<Props> = ({ className }) => {
 		addTaskOnEnter,
 		addTaskOnBlur,
 	} = useTodo();
+
 	return (
 		<div className={cx('todo', className)}>
 			<Input

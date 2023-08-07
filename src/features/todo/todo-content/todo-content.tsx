@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 
 import { Heading } from 'components/ui/heading';
 import { Counter } from 'components/ui/counter';
-import { EmptyState } from 'components/empty-state';
+import { EmptyState } from 'components/ui/empty-state';
 
 import { TodoContentBox } from '../todo-content-box';
 import { TodoList } from '../todo-list';

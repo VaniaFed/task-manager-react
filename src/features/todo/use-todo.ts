@@ -1,4 +1,4 @@
-import { createRef, useEffect, useState } from 'react';
+import { createRef, useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
@@ -62,10 +62,28 @@ export const useTodo = (): UseTodo => {
 	const inputRef = createRef<HTMLInputElement>();
 
 	useEffect(() => {
-		window.addEventListener('keydown', (e) => {
+		window.addEventListener('keydown', () => {
 			inputRef.current?.focus();
 		});
 	});
+
+	const isMounted = useRef(false);
+
+	useEffect(() => {
+		if (isMounted.current) {
+			localStorage.setItem('tasks', JSON.stringify(allTasks));
+		}
+
+		isMounted.current = true;
+	}, [allTasks]);
+
+	useEffect(() => {
+		if (isMounted.current) {
+			localStorage.setItem('filter', JSON.stringify(filter));
+		}
+
+		isMounted.current = true;
+	}, [filter]);
 
 	return {
 		allTasks,
