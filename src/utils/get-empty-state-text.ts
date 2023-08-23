@@ -7,6 +7,6 @@ export const getEmptyStateText = (filter: FilterType): string => {
 		case 'Active':
 			return 'Активных задач пока нет';
 		case 'Completed':
-			return 'Вы еще не закончили ни одну задачу';
+			return 'Вы еще не закончили ни одной задачи';
 	}
 };
