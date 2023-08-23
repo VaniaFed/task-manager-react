@@ -12,7 +12,7 @@ import type { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const TodoItem: FC<Props> = ({ task, onClick = () => {}, onRemove = () => {} }) => {
+export const TodoItem: FC<Props> = ({ task, onMark = () => {}, onRemove = () => {} }) => {
 	const [isRemoveBtnShown, setIsRemoveBtnShown] = useState(false);
 
 	const { id, text, isCompleted } = task;
@@ -21,7 +21,7 @@ export const TodoItem: FC<Props> = ({ task, onClick = () => {}, onRemove = () =>
 			className={cx('todo-item', isCompleted && 'todo-item_completed')}
 			onClick={(e) => {
 				e.preventDefault();
-				onClick(id);
+				onMark(id);
 			}}
 			onMouseEnter={() => {
 				setIsRemoveBtnShown(true);

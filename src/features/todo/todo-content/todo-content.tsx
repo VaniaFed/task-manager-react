@@ -15,7 +15,7 @@ import type { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const TodoContent: FC<Props> = ({ tasks, filter, counter }) => {
+export const TodoContent: FC<Props> = ({ tasks, filter, counter, onMark, onRemove }) => {
 	return (
 		<div className={cx('todo-content')}>
 			<Heading size="3" className={cx('todo-content__heading')}>
@@ -23,7 +23,11 @@ export const TodoContent: FC<Props> = ({ tasks, filter, counter }) => {
 				<Counter value={counter} className={cx('heading__counter')} />
 			</Heading>
 			<TodoContentBox>
-				{tasks.length > 0 ? <TodoList tasks={tasks} /> : <EmptyState filter={filter} />}
+				{tasks.length > 0 ? (
+					<TodoList tasks={tasks} onMark={onMark} onRemove={onRemove} />
+				) : (
+					<EmptyState filter={filter} />
+				)}
 			</TodoContentBox>
 		</div>
 	);
