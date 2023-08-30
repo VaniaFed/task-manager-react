@@ -1,2 +1,5 @@
-export { addTask, markTask, removeTask, removeCompleted, changeFilter, todoSlice } from './todo/slice';
-export { selectActiveTasks, selectCompletedTasks, selectTasks, selectFilter } from './todo/selectors';
+export { addTask, markTask, removeTask, removeCompleted } from './tasks/slice';
+export { selectActiveTasks, selectCompletedTasks, selectTasks } from './tasks/selectors';
+
+export { changeFilter } from './filter/slice';
+export { selectFilter } from './filter/selectors';

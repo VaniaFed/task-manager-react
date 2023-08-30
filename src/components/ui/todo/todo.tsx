@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import { Input } from 'components/ui/input';
 import { TodoContent } from 'components/ui/todo-content';
 import { TodoFooter } from 'components/ui/todo-footer';
-import { markTask, removeTask } from 'models/todo/slice';
+import { markTask, removeTask } from 'models/tasks/slice';
 import { useAppDispatch } from 'store/hooks';
 import { useTodo } from 'hooks/use-todo';
 
