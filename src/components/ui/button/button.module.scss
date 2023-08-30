@@ -24,33 +24,6 @@
 	}
 }
 
-.button_more {
-	@include paragraph_size_big;
-	display: flex;
-	align-items: center;
-	column-gap: 15px;
-	padding: 7px 20px;
-	background: none;
-	border-radius: 50px;
-
-	&:hover {
-		background: $color-green-400;
-	}
-
-	&:active {
-		background: $color-orange-200;
-	}
-
-	&::after {
-		content: '';
-		display: inline-flex;
-		align-items: center;
-		width: 24px;
-		height: 26px;
-		background: url('static/arrow bt.svg');
-	}
-}
-
 .button_secondary {
 	background: $color-green-100;
 	color: $color-green-400;
