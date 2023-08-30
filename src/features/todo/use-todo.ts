@@ -1,5 +1,6 @@
-import { createRef, useEffect, useRef, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { createRef, useEffect, useState } from 'react';
+
+import { useAppDispatch, useAppSelector } from 'store/hooks';
 
 import {
 	addTask as addTaskAction,
@@ -28,15 +29,15 @@ interface UseTodo {
 
 export const useTodo = (): UseTodo => {
 	const [taskValue, setTaskValue] = useState('');
-	const allTasks = useSelector(selectTasks);
-	const activeTasks = useSelector(selectActiveTasks);
-	const completedTasks = useSelector(selectCompletedTasks);
+	const allTasks = useAppSelector(selectTasks);
+	const activeTasks = useAppSelector(selectActiveTasks);
+	const completedTasks = useAppSelector(selectCompletedTasks);
 
-	const filter = useSelector(selectFilter);
+	const filter = useAppSelector(selectFilter);
 
 	const tasksToRender: TaskType[] = filter === 'All' ? allTasks : filter === 'Active' ? activeTasks : completedTasks;
 
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 
 	const addTask = (value: string): void => {
 		if (value.length > 0) {
@@ -66,24 +67,6 @@ export const useTodo = (): UseTodo => {
 			inputRef.current?.focus();
 		});
 	});
-
-	const isMounted = useRef(false);
-
-	useEffect(() => {
-		if (isMounted.current) {
-			localStorage.setItem('tasks', JSON.stringify(allTasks));
-		}
-
-		isMounted.current = true;
-	}, [allTasks]);
-
-	useEffect(() => {
-		if (isMounted.current) {
-			localStorage.setItem('filter', JSON.stringify(filter));
-		}
-
-		isMounted.current = true;
-	}, [filter]);
 
 	return {
 		allTasks,

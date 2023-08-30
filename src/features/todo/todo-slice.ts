@@ -1,19 +1,16 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-import { getTasksFromLS } from 'utils/get-tasks-from-ls';
-import { getFilterFromLS } from 'utils/get-filter-from-ls';
-
 import type { RootState } from 'store/store';
 import type { FilterType, TaskType } from 'types';
 
-interface InitialState {
+export interface InitialState {
 	tasks: TaskType[];
 	filter: FilterType;
 }
 
 const initialState: InitialState = {
-	tasks: getTasksFromLS(),
-	filter: getFilterFromLS(),
+	tasks: [],
+	filter: 'All',
 };
 
 export const todoSlice = createSlice({

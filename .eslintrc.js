@@ -51,6 +51,7 @@ module.exports = {
 					['components', './src/components'],
 					['ui', './src/components/ui'],
 					['features', './src/features'],
+					['store', './src/store'],
 					['services', './src/services'],
 					['utils', './src/utils'],
 					['static', './src/static'],

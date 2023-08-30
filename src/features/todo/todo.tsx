@@ -1,11 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import classNames from 'classnames/bind';
 
 import { Input } from 'components/ui/input';
 import { TodoContent } from 'features/todo/todo-content';
 import { TodoFooter } from 'features/todo/todo-footer';
 import { markTask, removeTask } from 'features/todo/todo-slice';
+import { useAppDispatch } from 'store/hooks';
 
 import { useTodo } from './use-todo';
 import styles from './todo.module.scss';
@@ -29,7 +29,7 @@ export const Todo: FC<Props> = ({ className }: Props) => {
 		addTaskOnBlur,
 	} = useTodo();
 
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 
 	const handleRemoveTask = (id: string): void => {
 		dispatch(removeTask(id));
