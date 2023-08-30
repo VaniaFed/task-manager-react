@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import todoReducer from 'features/todo/todo-slice';
+import todoReducer from 'models/todo/slice';
 import { getStateFromLocalStorage } from 'utils/get-state-from-local-storage';
 import { saveToLocalStorage } from 'utils/save-to-local-storage';
 

@@ -2,12 +2,12 @@ import React from 'react';
 import classNames from 'classnames/bind';
 
 import { Input } from 'components/ui/input';
-import { TodoContent } from 'features/todo/todo-content';
-import { TodoFooter } from 'features/todo/todo-footer';
-import { markTask, removeTask } from 'features/todo/todo-slice';
+import { TodoContent } from 'components/ui/todo-content';
+import { TodoFooter } from 'components/ui/todo-footer';
+import { markTask, removeTask } from 'models/todo/slice';
 import { useAppDispatch } from 'store/hooks';
+import { useTodo } from 'hooks/use-todo';
 
-import { useTodo } from './use-todo';
 import styles from './todo.module.scss';
 
 import type { FC } from 'react';

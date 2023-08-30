@@ -1,6 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-import type { RootState } from 'store/store';
 import type { FilterType, TaskType } from 'types';
 
 export interface InitialState {
@@ -45,14 +44,5 @@ export const todoSlice = createSlice({
 });
 
 export const { addTask, markTask, removeTask, removeCompleted, changeFilter } = todoSlice.actions;
-
-export const selectTasks = (state: RootState): TaskType[] => state.todo.tasks;
-
-export const selectActiveTasks = (state: RootState): TaskType[] => state.todo.tasks.filter((task) => !task.isCompleted);
-
-export const selectCompletedTasks = (state: RootState): TaskType[] =>
-	state.todo.tasks.filter((task) => task.isCompleted);
-
-export const selectFilter = (state: RootState): FilterType => state.todo.filter;
 
 export default todoSlice.reducer;

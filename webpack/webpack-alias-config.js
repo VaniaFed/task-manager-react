@@ -5,12 +5,13 @@ module.exports = {
 		alias: {
 			components: path.resolve(__dirname, '../src/components/'),
 			ui: path.resolve(__dirname, '../src/components/ui/'),
-			features: path.resolve(__dirname, '../src/features/'),
 			store: path.resolve(__dirname, '../src/store/'),
+			models: path.resolve(__dirname, '../src/models/'),
 			services: path.resolve(__dirname, '../src/services/'),
 			utils: path.resolve(__dirname, '../src/utils/'),
-			static: path.resolve(__dirname, '../src/static/'),
+			hooks: path.resolve(__dirname, '../src/hooks/'),
 			'types/': path.resolve(__dirname, '../src/types/'),
+			static: path.resolve(__dirname, '../src/static/'),
 		},
 	},
 };

@@ -14,12 +14,13 @@
 		"paths": {
 			"components": ["./src/components/"],
 			"ui": ["./src/components/ui/"],
-			"features": ["./src/features/"],
 			"store": ["./src/store/"],
+			"models": ["./src/models/"],
 			"services": ["./src/services/"],
 			"utils": ["./src/utils/"],
-			"static": ["./src/static/"],
-			"types/": ["./src/types/"]
+			"hooks": ["./src/hooks/"],
+			"types/": ["./src/types/"],
+			"static": ["./src/static/"]
 		}
 	},
 	"exclude": ["node_modules", "**/node_modules/*", ".stylelintrc", "*.stories.ts?"],

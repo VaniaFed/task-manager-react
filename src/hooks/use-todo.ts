@@ -1,15 +1,9 @@
 import { createRef, useEffect, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from 'store/hooks';
+import { addTask as addTaskAction, selectTasks, selectFilter, selectActiveTasks, selectCompletedTasks } from 'models/';
 
-import {
-	addTask as addTaskAction,
-	selectTasks,
-	selectFilter,
-	selectActiveTasks,
-	selectCompletedTasks,
-} from './todo-slice';
-import { createTask } from './helpers';
+import { createTask } from '../helpers/create-task';
 
 import type { FocusEvent, KeyboardEvent, RefObject } from 'react';
 import type { FilterType, TaskType } from 'types';

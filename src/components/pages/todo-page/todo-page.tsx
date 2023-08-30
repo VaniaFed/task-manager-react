@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Todo } from 'features/todo';
+import { Todo } from 'components/ui/todo';
 import { BoxContainer } from 'components/layouts/box-container';
 
 import type { FC } from 'react';

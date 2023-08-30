@@ -4,8 +4,7 @@ import classNames from 'classnames/bind';
 import { Tabs } from 'components/ui/tabs';
 import { Button } from 'components/ui/button';
 import { useAppDispatch } from 'store/hooks';
-
-import { removeCompleted, changeFilter } from '../todo-slice';
+import { removeCompleted, changeFilter } from 'models/';
 
 import styles from './todo-footer.module.scss';
 
