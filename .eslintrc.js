@@ -24,7 +24,7 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 		tsconfigRootDir: __dirname,
-		project: 'tsconfig.json',
+		project: ['./tsconfig.json'],
 	},
 	rules: {
 		quotes: ['error', 'single'],
@@ -42,16 +42,21 @@ module.exports = {
 	},
 	plugins: ['react'],
 	settings: {
+		react: {
+			version: 'detect',
+		},
 		'import/resolver': {
 			alias: {
 				map: [
 					['components', './src/components'],
 					['ui', './src/components/ui'],
-					['features', './src/features'],
+					['store', './src/store'],
+					['models', './src/models'],
 					['services', './src/services'],
 					['utils', './src/utils'],
-					['static', './src/static'],
+					['hooks', './src/hooks'],
 					['types', './src/types'],
+					['static', './src/static'],
 				],
 				extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
 			},

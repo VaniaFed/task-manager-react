@@ -116,6 +116,7 @@
 @mixin link_icon {
 	position: relative;
 	margin-left: 36px;
+	min-height: 30px;
 
 	@include media-mobile {
 		margin-left: 25px;

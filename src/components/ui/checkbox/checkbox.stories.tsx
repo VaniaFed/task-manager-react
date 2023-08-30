@@ -12,6 +12,9 @@ const meta: Meta = {
 
 export default meta;
 
+const onChange = (): void => {
+	console.log('changing');
+};
 export const Unchecked: ComponentStory<typeof Checkbox> = (args: Props) => (
 	<Checkbox {...args}>
 		Нажимая кнопку, я принимаю условия
@@ -19,11 +22,14 @@ export const Unchecked: ComponentStory<typeof Checkbox> = (args: Props) => (
 	</Checkbox>
 );
 
-Unchecked.args = {};
+Unchecked.args = {
+	onChange,
+};
 
 export const Checked: ComponentStory<typeof Checkbox> = (args: Props) => <Checkbox {...args} />;
 
 Checked.args = {
 	children: 'Checked',
 	checked: true,
+	onChange,
 };

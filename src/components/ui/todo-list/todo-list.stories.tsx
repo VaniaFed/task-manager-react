@@ -13,8 +13,6 @@ const meta: Meta = {
 
 export default meta;
 
-export const Default: ComponentStory<typeof TodoList> = (args: Props) => <TodoList {...args} />;
-
 const tasks: TaskType[] = [
 	{
 		id: 'sdklj',
@@ -37,6 +35,8 @@ const tasks: TaskType[] = [
 		isCompleted: true,
 	},
 ];
+
+export const Default: ComponentStory<typeof TodoList> = (args: Props) => <TodoList {...args} />;
 
 Default.args = {
 	tasks,

@@ -1,11 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import classNames from 'classnames/bind';
 
 import { Tabs } from 'components/ui/tabs';
 import { Button } from 'components/ui/button';
-
-import { removeCompleted, changeFilter } from '../todo-slice';
+import { useAppDispatch } from 'store/hooks';
+import { removeCompleted, changeFilter } from 'models/';
 
 import styles from './todo-footer.module.scss';
 
@@ -22,7 +21,7 @@ export const TodoFooter: FC<Props> = ({ allTasks, activeTasks, completedTasks, f
 		{ text: 'Completed', counter: completedTasks.length },
 	];
 
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 	const handleRemoveCompleted = (): void => {
 		dispatch(removeCompleted());
 	};
