@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { v4 } from 'uuid';
 
 import type { FilterType, TaskType } from 'types';
 
@@ -16,8 +17,19 @@ export const todoSlice = createSlice({
 	name: 'todo',
 	initialState,
 	reducers: {
-		addTask: (state, action: PayloadAction<TaskType>) => {
-			state.tasks.unshift(action.payload);
+		addTask: {
+			reducer(state, action: PayloadAction<TaskType>) {
+				state.tasks.unshift(action.payload);
+			},
+			prepare(value: string) {
+				return {
+					payload: {
+						id: v4(),
+						text: value,
+						isCompleted: false,
+					},
+				};
+			},
 		},
 		markTask: (state, action: PayloadAction<string>) => {
 			const tasksWithMarkedOne = state.tasks.map((task) =>
