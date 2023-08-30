@@ -29,7 +29,7 @@ export const TodoItem: FC<Props> = ({ task, onMark = () => {}, onRemove = () => 
 			onMouseLeave={() => {
 				setIsRemoveBtnShown(false);
 			}}>
-			<Checkbox checked={isCompleted}>
+			<Checkbox checked={isCompleted} readOnly>
 				<Paragraph>{text}</Paragraph>
 			</Checkbox>
 			{isRemoveBtnShown && (
